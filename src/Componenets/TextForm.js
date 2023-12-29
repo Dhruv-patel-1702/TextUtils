@@ -92,19 +92,32 @@ function TextForm(props){
                 {" "}
                 *{" "}
                 <b className={`text-${props.Style}`}>
-                  {text.split(" ").length}
+                  {
+                    text.split(" ").filter((element) => {
+                      return element.length != 0;
+                    }).length
+                  }
                 </b>{" "}
                 words and <b className={`text-${props.Style}`}>{text.length}</b>{" "}
                 characters
               </p>
               <p className={`text-${props.Style}`}>
                 {" "}
-                <b>* {0.008 * text.split(" ").length}</b> minutes read
+                <b>
+                  *{" "}
+                  {0.008 *
+                    text.split(" ").filter((element) => {
+                      return element.length != 0;
+                    }).length}
+                </b>{" "}
+                minutes read
               </p>
               <h2 className={`text-${props.Style} text-2px`}>Preview</h2>
-              <p className={`text-${props.Style}`}>{
-                text.length>0?text:"Enter something in the textbox above to preview it here"
-              }</p>
+              <p className={`text-${props.Style}`}>
+                {text.length > 0
+                  ? text
+                  : "Enter something in the textbox above to preview it here"}
+              </p>
             </div>
           </div>
         </div>
