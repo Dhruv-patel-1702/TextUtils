@@ -41,11 +41,13 @@ function TextForm(props){
         className="container mt-10"
         style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
-        <h1 className={`font-bold text-3xl relative left-32 `}>
+        <h1
+          className={`md:font-bold mx-16 xl:mx-28 text-2xl lg:mx-20 2xl:mx-32 `}
+        >
           {props.heading}
         </h1>
         <textarea
-          className="form-control w-5/6 m-auto mt-3"
+          className="form-control w-5/6 m-auto mt-3 md:text-sm xl:text-base sm:text-sm"
           id="Mybox"
           rows="10"
           value={text}
@@ -58,24 +60,27 @@ function TextForm(props){
         ></textarea>
       </div>
       <div className="container my-3 flex content-center justify-center">
-        <div>
-          <button className="btn btn-primary mt-3" onClick={handleUpClick}>
+        <div className="md:absolute left-42 mt-3 ">
+          <button
+            className="btn btn-primary my-1 md:text-sm xl:text-lg py-1 px-2 mx-1 sm:text-sm  "
+            onClick={handleUpClick}
+          >
             Convert to uppercase
           </button>
           <button
-            className="btn btn-primary mt-3 ml-16"
+            className="btn btn-primary mx-3 md:text-sm xl:text-lg py-1 px-2  sm:text-sm"
             onClick={handleloClick}
           >
             Convert to Lowercase
           </button>
           <button
-            className="btn btn-primary mt-3 ml-16"
+            className="btn btn-primary  mx md:text-sm xl:text-lg py-1 px-2 mx-1  sm:text-sm"
             onClick={handleclearClick}
           >
             Clear
           </button>
           <button
-            className="btn btn-primary mt-3 ml-16"
+            className="btn btn-primary  mx-3 md:text-sm xl:text-lg py-1 px-2  sm:text-sm"
             onClick={handlecapiClick}
           >
             Capitalize Word
@@ -84,8 +89,8 @@ function TextForm(props){
             className="flex content-center justify-center mt-4"
             style={{ color: props.mode === "dark" ? "white" : "black" }}
           >
-            <div className="text-xl">
-              <h1 className={`text-2xl text-${props.Style}`}>
+            <div className="md:text-sm xl:text-lg sm:text-sm">
+              <h1 className={`md:text-2xl text-${props.Style} sm:text-xl`}>
                 Your text summary
               </h1>
               <p className={`text-${props.Style}`}>
@@ -94,7 +99,7 @@ function TextForm(props){
                 <b className={`text-${props.Style}`}>
                   {
                     text.split(" ").filter((element) => {
-                      return element.length != 0;
+                      return element.length !== 0;
                     }).length
                   }
                 </b>{" "}
@@ -107,7 +112,7 @@ function TextForm(props){
                   *{" "}
                   {0.008 *
                     text.split(" ").filter((element) => {
-                      return element.length != 0;
+                      return element.length !== 0;
                     }).length}
                 </b>{" "}
                 minutes read

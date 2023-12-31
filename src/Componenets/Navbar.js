@@ -7,23 +7,26 @@ export function Navbar(props){
     <>
       <nav className="navbar">
         <div
-          className={`container-fluid  text-${props.Style} bg-${props.mode} h-14 relative bottom-2`}
+          className={`md:container-fluid  text-${props.Style} bg-${props.mode} h-14 relative bottom-2 w-full `}
         >
-          <div className="flex items-center">
-            <Link  to="/" className={`navbar-brand mr-14  text-${props.Style}`}>
+          <div className="md:flex items-center mt-2 xl:text-lg sm:flex text-sm ">
+            <Link
+              to="/"
+              className={`navbar-brand mr-14 mx-10 text-${props.Style} sm:mx-5 md:mx-10`}
+            >
               {props.title}
             </Link>
-            <ul className="flex">
+            <ul className="md:flex xl:flex sm:flex items-center">
               <Link to="/">
-                <li className="mr-10">Home</li>
+                <li className="mx-3">Home</li>
               </Link>
               <Link to="/About">
-              <li className="mr-10">About</li>
+                <li className="mx-3">About</li>
               </Link>
             </ul>
           </div>
-          <form className="d-flex" role="search">
-            <div className="form-check form-switch flex justify-center mt-2 mr-5">
+          <form role="search">
+            <div className="md:flex float-right form-check form-switch sm:mx-6 relative bottom-6 flex items-center xl:bottom-8">
               <input
                 className="form-check-input"
                 type="checkbox"
@@ -32,7 +35,7 @@ export function Navbar(props){
                 onClick={props.togglemode}
               />
               <label
-                className="form-check-label ml-3"
+                className="form-check-label ml-2 lg:text-base sm:text-sm xl:text-lg "
                 htmlFor="flexSwitchCheckDefault"
               >
                 Enable {props.Style} mode
