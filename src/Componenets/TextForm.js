@@ -62,30 +62,35 @@ function TextForm(props){
       <div className="container my-3 flex content-center justify-center">
         <div className="md:absolute left-42 mt-3 ">
           <button
+            disabled={text.length === 0}
             className="btn btn-primary my-1 md:text-sm xl:text-lg py-1 px-2 mx-1 sm:text-sm  "
             onClick={handleUpClick}
           >
             Convert to uppercase
           </button>
           <button
+            disabled={text.length === 0}
             className="btn btn-primary mx-3 md:text-sm xl:text-lg py-1 px-2  sm:text-sm"
             onClick={handleloClick}
           >
             Convert to Lowercase
           </button>
           <button
+            disabled={text.length === 0}
             className="btn btn-primary  mx md:text-sm xl:text-lg py-1 px-2 mx-1  sm:text-sm"
             onClick={handleclearClick}
           >
             Clear
           </button>
           <button
+            disabled={text.length === 0}
             className="btn btn-primary  mx-3 md:text-sm xl:text-lg py-1 px-2  sm:text-sm"
             onClick={handlecapiClick}
           >
             Capitalize Word
           </button>
           <div
+            
             className="flex content-center justify-center mt-4"
             style={{ color: props.mode === "dark" ? "white" : "black" }}
           >
@@ -121,7 +126,8 @@ function TextForm(props){
               <p className={`text-${props.Style}`}>
                 {text.length > 0
                   ? text
-                  : "Enter something in the textbox above to preview it here"}
+                  :"Nothing to Preview" 
+                }
               </p>
             </div>
           </div>
